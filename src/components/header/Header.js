@@ -28,7 +28,10 @@ const Logo = ({ xs, md }) => {
       <Typography
         sx={{
           color: "#4a4b4c",
-          font: 'normal 700 33px / normal "Montserrat"',
+          font: {
+            md: 'normal 700 26px / normal "MontserratBold"',
+            lg: 'normal 700 33px / normal "MontserratBold"',
+          },
         }}
       >
         EduTech
@@ -36,7 +39,10 @@ const Logo = ({ xs, md }) => {
       <Typography
         sx={{
           color: "#19467e",
-          font: 'normal 700 33px / normal "Montserrat"',
+          font: {
+            md: 'normal 700 26px / normal "MontserratBold"',
+            lg: 'normal 700 33px / normal "MontserratBold"',
+          },
         }}
       >
         AI
@@ -53,8 +59,8 @@ const Header = () => {
     letterSpacing: "0.168px",
     borderRadius: "30px",
     border: "1px solid #19467E",
-    height: "56px",
-    width: "124px",
+    height: { md: "40px", lg: "56px" },
+    width: { md: "90px", lg: "124px" },
   };
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const handleOpenNavMenu = (event) => {
@@ -123,7 +129,8 @@ const Header = () => {
           <Box
             sx={{
               flexGrow: 1,
-              display: { xs: "none", md: "flex", gap: "2rem" },
+              display: { xs: "none", md: "flex" },
+              gap: { md: "0.5rem", lg: "1.5rem", xl: "2rem" },
             }}
           >
             {headerItems.map((item) => (
@@ -134,7 +141,10 @@ const Header = () => {
                   my: 2,
                   display: "block",
                   color: "#595959 ",
-                  font: 'normal 400 23px / normal "Inter"',
+                  font: {
+                    md: 'normal 400 18px / normal "Inter"',
+                    lg: 'normal 400 23px / normal "Inter"',
+                  },
                   textTransform: "none",
                 }}
               >
