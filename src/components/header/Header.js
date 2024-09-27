@@ -83,91 +83,86 @@ const Header = () => {
       sx={{ bgcolor: "white", margin: "30px 0" }}
       elevation={0}
     >
-      <Container maxWidth="xl">
-        <Toolbar disableGutters>
-          <Logo xs="none" md="flex" />
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="#595959"
-            >
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "left",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "left",
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{ display: { xs: "block", md: "none" } }}
-            >
-              {headerItems.map((item) => (
-                <MenuItem key={item} onClick={handleCloseNavMenu}>
-                  <Typography
-                    className="item_text"
-                    sx={{ textAlign: "center" }}
-                  >
-                    {item}
-                  </Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
-          <Logo xs="flex" md="none" />
-          <Box
-            sx={{
-              flexGrow: 1,
-              display: { xs: "none", md: "flex" },
-              gap: { md: "0.5rem", lg: "1.5rem", xl: "2rem" },
+      <Toolbar disableGutters>
+        <Logo xs="none" md="flex" />
+        <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+          <IconButton
+            size="large"
+            aria-label="account of current user"
+            aria-controls="menu-appbar"
+            aria-haspopup="true"
+            onClick={handleOpenNavMenu}
+            color="#595959"
+          >
+            <MenuIcon />
+          </IconButton>
+          <Menu
+            id="menu-appbar"
+            anchorEl={anchorElNav}
+            anchorOrigin={{
+              vertical: "bottom",
+              horizontal: "left",
             }}
+            keepMounted
+            transformOrigin={{
+              vertical: "top",
+              horizontal: "left",
+            }}
+            open={Boolean(anchorElNav)}
+            onClose={handleCloseNavMenu}
+            sx={{ display: { xs: "block", md: "none" } }}
           >
             {headerItems.map((item) => (
-              <Button
-                key={item}
-                onClick={handleCloseNavMenu}
-                sx={{
-                  my: 2,
-                  display: "block",
-                  color: "#595959 ",
-                  font: {
-                    md: 'normal 400 18px / normal "Inter"',
-                    lg: 'normal 400 23px / normal "Inter"',
-                  },
-                  textTransform: "none",
-                }}
-              >
-                {item}
-              </Button>
+              <MenuItem key={item} onClick={handleCloseNavMenu}>
+                <Typography className="item_text" sx={{ textAlign: "center" }}>
+                  {item}
+                </Typography>
+              </MenuItem>
             ))}
-          </Box>
-          <Stack direction="row" sx={{ gap: "1rem" }}>
+          </Menu>
+        </Box>
+        <Logo xs="flex" md="none" />
+        <Box
+          sx={{
+            flexGrow: 1,
+            display: { xs: "none", md: "flex" },
+            gap: { md: "0.5rem", lg: "1rem", xl: "1rem" },
+          }}
+        >
+          {headerItems.map((item) => (
             <Button
-              sx={{ ...btnStyle, background: "#FCFCFC" }}
-              variant="outlined"
+              key={item}
+              onClick={handleCloseNavMenu}
+              sx={{
+                my: 2,
+                display: "block",
+                color: "#595959 ",
+                font: {
+                  md: 'normal 400 18px / normal "Inter"',
+                  lg: 'normal 400 23px / normal "Inter"',
+                },
+                textTransform: "none",
+              }}
             >
-              Log in
+              {item}
             </Button>
-            <Button
-              sx={{ ...btnStyle, background: "#054BB4" }}
-              variant="contained"
-            >
-              Sign up
-            </Button>
-          </Stack>
-        </Toolbar>
-      </Container>
+          ))}
+        </Box>
+        <Stack direction="row" sx={{ gap: "1rem" }}>
+          <Button
+            sx={{ ...btnStyle, background: "#FCFCFC" }}
+            variant="outlined"
+          >
+            Log in
+          </Button>
+          <Button
+            sx={{ ...btnStyle, background: "#054BB4" }}
+            variant="contained"
+          >
+            Sign up
+          </Button>
+        </Stack>
+      </Toolbar>
     </AppBar>
   );
 };

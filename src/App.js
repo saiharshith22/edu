@@ -1,3 +1,4 @@
+import { Box } from "@mui/material";
 import "./App.css";
 import About from "./components/About";
 import FeatureProduct from "./components/FeatureProduct";
@@ -7,16 +8,21 @@ import Testimonials from "./components/Testimonials";
 
 function App() {
   return (
-    <main>
+    <Box
+      sx={{
+        padding: {
+          xs: "0 15px 15px 15px",
+          md: "0px 30px 30px 30px",
+          lg: "0 50px 50px 50px",
+        },
+      }}
+    >
       <Header />
       <MainComponent />
-      {/* <div className="main_container">
-        
-      </div> */}
-      <About />
-      <FeatureProduct />
-      <Testimonials />
-    </main>
+      {/* <About />
+      <FeatureProduct /> */}
+      {/* <Testimonials /> */}
+    </Box>
   );
 }
 

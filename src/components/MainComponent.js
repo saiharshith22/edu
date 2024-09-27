@@ -2,10 +2,11 @@ import {
   Avatar,
   AvatarGroup,
   Button,
-  Grid,
   Stack,
   Typography,
   Box,
+  Grid2 as Grid,
+  Grid as GridOld,
 } from "@mui/material";
 import React from "react";
 import playBtn from "../assets/Images/Play icon.svg";
@@ -59,51 +60,71 @@ const MainComponent = () => {
     width: "150px",
   };
   return (
-    <div>
-      <Grid container spacing={2} sx={{ padding: "2rem" }}>
-        <Grid item xs={8}>
-          <Typography
-            sx={{
-              font: "normal 800 35px/normal 'InterBold'",
-              color: "#000",
-              margin: "20px 0px 6px 0px",
-            }}
-          >
-            Elevate Your Study Game with AI
-          </Typography>
-          <Typography
-            sx={{
-              font: "normal 500 33px/normal 'Inter'",
-              color: "#595959",
-              letterSpacing: "0.083px",
-            }}
-          >
-            Transform Your Learning Experience
-          </Typography>
-          <Typography
-            sx={{
-              font: "normal 400 16px/normal 'Inter'",
-              color: "#595959",
-              letterSpacing: "0.024px",
-              margin: "32px 0px 32px 0px",
-            }}
-          >
-            Welcome to the future of learning. Discover a new way to study with
-            our AI-powered educational platform. Upload your textbooks, browse
-            our AI-driven bookstore, and harness the power of our AI Question
-            Generator and MCQ Creator. Experience personalized, smarter study
-            sessions designed just for you
-          </Typography>
-          <div
+    <Box sx={{ pt: { xs: 0, md: "40px" } }}>
+      <Grid container spacing={2}>
+        <Grid
+          size={{ xs: 12, sm: 8, xl: 9 }}
+          container
+          sx={{ position: "relative" }}
+        >
+          <Grid rowSpacing={1}>
+            <Typography
+              sx={{
+                font: {
+                  xs: "normal 800 22px/normal 'InterBold'",
+                  sm: "normal 800 28px/normal 'InterBold'",
+                  md: "normal 800 35px/normal 'InterBold'",
+                  lg: "normal 800 47px/normal 'InterBold'",
+                },
+                color: "#000",
+                margin: "20px 0px 6px 0px",
+              }}
+            >
+              Elevate Your Study Game with AI
+            </Typography>
+            <Typography
+              sx={{
+                font: {
+                  xs: "normal 600 16px/normal 'Inter'",
+                  sm: "normal 600 20px/normal 'Inter'",
+                  md: "normal 600 28px/normal 'Inter'",
+                  lg: "normal 600 33px/normal 'Inter'",
+                },
+                color: "#595959",
+                letterSpacing: "0.083px",
+              }}
+            >
+              Transform Your Learning Experience
+            </Typography>
+            <Typography
+              sx={{
+                font: {
+                  xs: "normal 400 12px/normal 'Inter'",
+                  sm: "normal 400 14px/normal 'Inter'",
+                  md: "normal 400 16px/normal 'Inter'",
+                  lg: "normal 400 16px/normal 'Inter'",
+                },
+                color: "#595959",
+                letterSpacing: "0.024px",
+                margin: "32px 0px 32px 0px",
+              }}
+            >
+              Welcome to the future of learning. Discover a new way to study
+              with our AI-powered educational platform. Upload your textbooks,
+              browse our AI-driven bookstore, and harness the power of our AI
+              Question Generator and MCQ Creator. Experience personalized,
+              smarter study sessions designed just for you
+            </Typography>
+          </Grid>
+          <Grid
             style={{
               display: "flex",
               alignItems: "center",
               gap: "1rem",
-              margin: "50px 0px 50px 0px",
             }}
           >
             <Button
-              sx={{ ...btnStyle, background: "#054BB4" }}
+              sx={{ ...btnStyle, background: "#054BB4", height: "35px" }}
               variant="contained"
             >
               Get Started
@@ -112,8 +133,8 @@ const MainComponent = () => {
               <img src={playBtn} alt="playBtn" height={20} width={20} />
               <span>See how it works?</span>
             </div>
-          </div>
-          <div
+          </Grid>
+          <Grid
             style={{
               display: "flex",
               alignItems: "center",
@@ -132,27 +153,84 @@ const MainComponent = () => {
                 <Typography sx={kreviews}>Reviewers</Typography>
               </div>
             </div>
-            <div>
-              <img src={Start1} alt="Start1" />
-            </div>
-          </div>
+            <Box
+              component="img"
+              src={Start1}
+              alt="Start1"
+              sx={{
+                position: "absolute",
+                width: "100%",
+                height: "auto",
+                maxWidth: { xs: "70px", sm: "100px" },
+                maxHeight: { xs: "70px", sm: "100px" },
+                right: 0,
+                bottom: 0,
+              }}
+            />
+          </Grid>
         </Grid>
-        <Grid item xs={4}>
-          <div
-            style={{
+        <Grid size={{ xs: 12, sm: 4, xl: 3 }}>
+          <Box
+            sx={{
               display: "grid",
-              gridTemplateColumns: "repeat(2,1fr)",
+              gridTemplateColumns: {
+                xs: "repeat(4, 1fr)", // 1 column on extra small screens
+                sm: "repeat(2, 1fr)", // 2 columns on small screens
+                md: "repeat(2, 1fr)", // 2 columns on medium screens
+                lg: "repeat(2, 1fr)", // 4 columns on large screens
+              },
+              gap: 2, // gap between items
             }}
           >
-            <img src={image1} alt="image1" width={176.551} height={216.165} />
-            <img src={image2} alt="image2" width={176.551} height={216.165} />
-            <img src={image3} alt="image3" width={176.551} height={216.165} />
-            <img src={image4} alt="image4" width={176.551} height={216.165} />
-          </div>
+            <Box
+              component="img"
+              src={image1}
+              alt="image1"
+              sx={{
+                width: "100%",
+                height: "auto",
+                maxWidth: "176px",
+                maxHeight: "215px",
+              }}
+            />
+            <Box
+              component="img"
+              src={image2}
+              alt="image2"
+              sx={{
+                width: "100%",
+                height: "auto",
+                maxWidth: "176px",
+                maxHeight: "215px",
+              }}
+            />
+            <Box
+              component="img"
+              src={image3}
+              alt="image3"
+              sx={{
+                width: "100%",
+                height: "auto",
+                maxWidth: "176px",
+                maxHeight: "215px",
+              }}
+            />
+            <Box
+              component="img"
+              src={image4}
+              alt="image4"
+              sx={{
+                width: "100%",
+                height: "auto",
+                maxWidth: "176px",
+                maxHeight: "215px",
+              }}
+            />
+          </Box>
         </Grid>
       </Grid>
       <Stack direction="row">
-        <Grid item xs={4} sx={{ position: "relative" }}>
+        <Grid size={{ xs: 4 }} sx={{ position: "relative" }}>
           <img src={laptopImg} alt="laptopImage" width={257} height={322} />
           <div
             style={{
@@ -182,7 +260,7 @@ const MainComponent = () => {
             <span style={{ color: "white" }}>Total Students</span>
           </div>
         </Grid>
-        <Grid item xs={4}>
+        <Grid size={{ xs: 4 }}>
           <img src={StartIcon} alt="StarIcon" />
           <Typography>
             Transform the way you study with our comprehensive suite tools and
@@ -195,12 +273,12 @@ const MainComponent = () => {
             smarter studying today.
           </Typography>
         </Grid>
-        <Grid item xs={4}>
+        <Grid size={{ xs: 4 }}>
           <img src={AIimgage} alt="Ai_Image" />
         </Grid>
       </Stack>
 
-      <div
+      {/* <div
         style={{
           display: "flex",
           flexDirection: "column",
@@ -285,8 +363,8 @@ const MainComponent = () => {
             alt="Unanet"
           />
         </Stack>
-      </div>
-    </div>
+      </div> */}
+    </Box>
   );
 };
 
