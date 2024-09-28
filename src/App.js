@@ -5,6 +5,9 @@ import FeatureProduct from "./components/FeatureProduct";
 import Header from "./components/header/Header";
 import MainComponent from "./components/MainComponent";
 import Testimonials from "./components/Testimonials";
+import McqGenIntro from "./components/McqGenIntro";
+import McqGenIntro2 from "./components/McqGenIntro2";
+import McqWhoIsIt from "./components/McqWhoIsIt";
 
 function App() {
   return (
@@ -18,7 +21,10 @@ function App() {
       }}
     >
       <Header />
-      <MainComponent />
+      {/* <MainComponent /> */}
+      {/* <McqGenIntro></McqGenIntro>
+      <McqGenIntro2></McqGenIntro2> */}
+      <McqWhoIsIt></McqWhoIsIt>
       {/* <About />
       <FeatureProduct /> */}
       {/* <Testimonials /> */}
