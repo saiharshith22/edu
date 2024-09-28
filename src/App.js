@@ -1,10 +1,10 @@
 import { Box } from "@mui/material";
 import "./App.css";
-import About from "./components/About";
-import FeatureProduct from "./components/FeatureProduct";
+
 import Header from "./components/header/Header";
-import MainComponent from "./components/MainComponent";
-import Testimonials from "./components/Testimonials";
+import Home from "./pages/Home";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -12,16 +12,19 @@ function App() {
       sx={{
         padding: {
           xs: "0 15px 15px 15px",
-          md: "0px 30px 30px 30px",
-          lg: "0 50px 50px 50px",
+          sm: "0 30px 30px 30px",
+          md: "0px 50px 30px 50px",
+          lg: "0 100px 30px 100px",
         },
       }}
     >
       <Header />
-      <MainComponent />
-      {/* <About />
-      <FeatureProduct /> */}
-      {/* <Testimonials /> */}
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </Router>
+      <Footer />
     </Box>
   );
 }
