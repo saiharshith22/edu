@@ -9,7 +9,7 @@ import ArrowImg from "../assets/Images/ArrowNarrowRightOutline.svg";
 const Product = [
   {
     image: AIGENimg,
-    title: "AI Question generator product",
+    title: "AI Question generator",
     text: "Instantly generate tailored questions for any topic, enhancing personalized learning experiences with AI-driven accuracy",
     learn: "Learn More",
     icon: ArrowImg,
@@ -23,7 +23,7 @@ const Product = [
   },
   {
     image: BookStore,
-    title: "AI Book Store product",
+    title: "AI Book Store",
     text: "Discover and access AI-curated book recommendations, tailored to your learning needs and preferences.",
     learn: "Learn More",
     icon: ArrowImg,
@@ -44,7 +44,7 @@ const Product = [
   },
   {
     image: AIInterview,
-    title: "AI Interview product",
+    title: "AI Interview",
     text: "Prepare for interviews with AI-powered mock sessions, offering real-time feedback and personalized improvement tips.",
     learn: "Learn More",
     icon: ArrowImg,

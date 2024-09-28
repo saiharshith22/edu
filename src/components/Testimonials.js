@@ -1,52 +1,71 @@
-import { Typography } from "@mui/material";
+import { Box, Grid2 as Grid, Typography } from "@mui/material";
 import React from "react";
-import Star2 from "../assets/Images/Frame 261.png";
-import Rectangle1 from "../assets/Images/Rectangle1.png";
-import Rectangle2 from "../assets/Images/Rectangle2.png";
-import Rectangle3 from "../assets/Images/Rectangle3.png";
+import TestimonialImg from "../assets/Images/testimonial-img.svg";
 
 const Testimonials = () => {
   return (
-    <div>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          gap: "24px",
-          alignItems: "center",
-          marginTop: "50px",
-          marginBottom: "24px",
-        }}
-      >
-        <Typography
+    <Box>
+      <Grid container>
+        <Grid
+          size={{ xs: 12 }}
           sx={{
-            font: "normal 500 33px/normal 'Inter'",
-            color: "#5A5C5F",
-            letterSpacing: "0.083px",
-            margin: "0px",
+            display: "flex",
+            flexDirection: "row",
+            gap: "24px",
+            alignItems: "center",
+            marginTop: "50px",
+            marginBottom: "24px",
           }}
         >
-          TESTIMONIALS
-        </Typography>
-        <hr
-          style={{
-            background: "#000",
-            width: "132px",
-            height: "1px",
-            margin: "0px",
-          }}
-        />
-      </div>
-
-      <div style={{ display: "flex", flexDirection: "row" }}>
-        <div style={{ display: "flex", flexDirection: "column", width: "50%" }}>
-          <div>
-            <img src={Star2} alt="" />
-          </div>
-          <div>
+          <Typography
+            sx={{
+              font: {
+                xs: "normal 500 18px/normal 'Inter'",
+                sm: "normal 500 20px/normal 'Inter'",
+                md: "normal 500 28px/normal 'Inter'",
+                lg: "normal 500 33px/normal 'Inter'",
+              },
+              color: "#5A5C5F",
+              letterSpacing: "0.083px",
+              margin: "0px",
+            }}
+          >
+            TESTIMONIALS
+          </Typography>
+          <hr
+            style={{
+              background: "#000",
+              width: "11%",
+              height: "1px",
+              margin: "0px",
+            }}
+          />
+        </Grid>
+        <Grid size={{ sm: 6 }}>
+          <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
+            <Box>
+              <Typography
+                sx={{
+                  font: {
+                    xs: "normal 500 12px/normal 'Inter'",
+                    sm: "normal 500 12px/normal 'Inter'",
+                    md: "normal 500 14px/normal 'Inter'",
+                    lg: "normal 500 14px/normal 'Inter'",
+                  },
+                  color: "#5A5C5F",
+                }}
+              >
+                1 day ago
+              </Typography>
+            </Box>
             <Typography
               sx={{
-                font: "italic 400 30px/normal 'Inter'",
+                font: {
+                  xs: "italic 400 16px/normal 'Inter'",
+                  sm: "italic 400 18px/normal 'Inter'",
+                  md: "italic 400 26px/normal 'Inter'",
+                  lg: "italic 400 30px/normal 'Inter'",
+                },
                 color: "#5A5C5F",
                 letterSpacing: "0.075px",
               }}
@@ -58,27 +77,35 @@ const Testimonials = () => {
               appreciate the detailed feedback and explanations provided by the
               AI”
             </Typography>
-          </div>
-          <div>
             <Typography
-              style={{
-                font: "italic 400 23px/normal 'Inter'",
+              sx={{
+                font: {
+                  xs: "italic 400 14px/normal 'InterBold'",
+                  sm: "italic 400 16px/normal 'InterBold'",
+                  md: "italic 400 18px/normal 'InterBold'",
+                  lg: "italic 400 22px/normal 'InterBold'",
+                },
                 color: "#000",
                 letterSpacing: "0.035px",
               }}
             >
               JessicaL, Online Course Creator
             </Typography>
-          </div>
-        </div>
-
-        <div style={{ display: "flex", flexDirection: "row", width: "50%" }}>
-          <img src={Rectangle1} alt="Rectangle1" />
-          <img src={Rectangle2} alt="Rectangle2" />
-          <img src={Rectangle3} alt="Rectangle3" />
-        </div>
-      </div>
-    </div>
+          </Box>
+        </Grid>
+        <Grid
+          size={{ sm: 6 }}
+          sx={{ display: "flex", alignItems: "flex-start" }}
+        >
+          <Box
+            component="img"
+            src={TestimonialImg}
+            alt="testimonial-img"
+            sx={{ maxWidth: "566px", width: "100%" }}
+          />
+        </Grid>
+      </Grid>
+    </Box>
   );
 };
 

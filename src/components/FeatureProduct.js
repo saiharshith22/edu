@@ -1,9 +1,9 @@
 import {
+  Box,
   Button,
   Card,
-  CardActions,
   CardContent,
-  Link,
+  Grid2 as Grid,
   Typography,
 } from "@mui/material";
 import React from "react";
@@ -24,7 +24,12 @@ const FeatureProduct = () => {
       >
         <Typography
           sx={{
-            font: "normal 500 33px/normal 'Inter'",
+            font: {
+              xs: "normal 500 18px/normal 'Inter'",
+              sm: "normal 500 20px/normal 'Inter'",
+              md: "normal 500 28px/normal 'Inter'",
+              lg: "normal 500 33px/normal 'Inter'",
+            },
             color: "#5A5C5F",
             letterSpacing: "0.083px",
             margin: "0px",
@@ -35,7 +40,7 @@ const FeatureProduct = () => {
         <hr
           style={{
             background: "#000",
-            width: "112px",
+            width: "11%",
             height: "1px",
             margin: "0px",
           }}
@@ -43,7 +48,12 @@ const FeatureProduct = () => {
       </div>
       <Typography
         sx={{
-          font: "normal 400 16px/normal 'Inter'",
+          font: {
+            xs: "normal 400 12px/normal 'Inter'",
+            sm: "normal 400 14px/normal 'Inter'",
+            md: "normal 400 16px/normal 'Inter'",
+            lg: "normal 400 16px/normal 'Inter'",
+          },
           color: "#000",
           letterSpacing: "0.024px",
         }}
@@ -53,39 +63,80 @@ const FeatureProduct = () => {
         students with the resources they need to succeed in a dynamic
         educational landscape.
       </Typography>
-      <div
-        style={{
-          marginTop: "32px",
-          marginBottom: "20px",
-          display: "grid",
-          gridTemplateColumns: "repeat(3,1fr)",
+      <Grid
+        container
+        gap={{ sm: 2, lg: 5 }}
+        sx={{
+          p: { md: "20px", lg: "35px 100px" },
+          justifyContent: "center",
         }}
       >
         {Product.map((item) => {
           return (
-            <Card sx={{ maxWidth: 345 }}>
-              {/* <CardMedia>{item.image} </CardMedia> */}
-              <img src={item.image} alt="" />
-              <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
-                  {item.title}
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  {item.text}
-                </Typography>
-              </CardContent>
-              <CardActions>
-                <div style={{ display: "flex" }}>
-                  <Button>{item.learn}</Button>
-                  <Button>
-                    <img src={item.icon} alt="" />
-                  </Button>
-                </div>
-              </CardActions>
-            </Card>
+            <Grid sx={{ pt: "15px" }}>
+              <Card
+                sx={{
+                  maxWidth: "280px",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  boxShadow: "none",
+                  border: "1px solid #E2E0E0",
+                  height: "100%",
+                }}
+              >
+                <Box
+                  component="img"
+                  src={item.image}
+                  alt=""
+                  sx={{ maxWidth: { xs: "90px", lg: "180px" }, mt: "20px" }}
+                />
+                <CardContent
+                  sx={{ display: "flex", flexDirection: "column", gap: 2 }}
+                >
+                  <Typography
+                    gutterBottom
+                    sx={{
+                      font: {
+                        xs: "normal 500 14px/normal 'InterBold'",
+                        sm: "normal 500 16px/normal 'InterBold'",
+                        md: "normal 500 18px/normal 'InterBold'",
+                        lg: "normal 500 22px/normal 'InterBold'",
+                      },
+                      textAlign: "center",
+                      color: "#000",
+                    }}
+                  >
+                    {item.title}
+                  </Typography>
+                  <Typography
+                    sx={{
+                      font: {
+                        xs: "normal 400 12px/normal 'Inter'",
+                        sm: "normal 400 14px/normal 'Inter'",
+                        md: "normal 400 16px/normal 'Inter'",
+                        lg: "normal 400 16px/normal 'Inter'",
+                      },
+                    }}
+                  >
+                    {item.text}
+                  </Typography>
+                  <Box>
+                    <Button
+                      sx={{ p: 0, textTransform: "none" }}
+                      endIcon={<img src={item.icon} alt="right arrow" />}
+                    >
+                      {item.learn}
+                    </Button>
+                    <Button></Button>
+                  </Box>
+                </CardContent>
+              </Card>
+            </Grid>
           );
         })}
-      </div>
+      </Grid>
     </div>
   );
 };
