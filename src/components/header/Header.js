@@ -9,6 +9,7 @@ import MenuItem from "@mui/material/MenuItem";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Logo = ({ xs, md }) => {
   return (
@@ -62,12 +63,26 @@ const Header = () => {
     width: { md: "90px", lg: "124px" },
   };
   const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const navigate = useNavigate();
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleCloseNavMenu = () => {
+  const handleCloseNavMenu = (routeTo) => {
     setAnchorElNav(null);
+    switch (routeTo) {
+      case "Home":
+        navigate("/");
+        break;
+      case "Product":
+      default:
+        navigate("/mcq-about");
+        break;
+    }
   };
+
+  // const handleClick = (routeTo) => {
+  //   console.log("----->", routeTo);
+  // };
 
   const headerItems = [
     "Home",
@@ -112,7 +127,7 @@ const Header = () => {
             sx={{ display: { xs: "block", md: "none" } }}
           >
             {headerItems.map((item) => (
-              <MenuItem key={item} onClick={handleCloseNavMenu}>
+              <MenuItem key={item} onClick={() => handleCloseNavMenu(item)}>
                 <Typography className="item_text" sx={{ textAlign: "center" }}>
                   {item}
                 </Typography>
@@ -131,7 +146,7 @@ const Header = () => {
           {headerItems.map((item) => (
             <Button
               key={item}
-              onClick={handleCloseNavMenu}
+              onClick={() => handleCloseNavMenu(item)}
               sx={{
                 my: 2,
                 display: "block",

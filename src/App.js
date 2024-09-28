@@ -19,14 +19,14 @@ function App() {
         },
       }}
     >
-      <Header />
       <Router>
+        <Header />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/mcq-about" element={<McqWhoIsIt />} />
         </Routes>
+        <Footer />
       </Router>
-      <Footer />
     </Box>
   );
 }
