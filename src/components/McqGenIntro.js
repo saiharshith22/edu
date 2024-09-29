@@ -5,8 +5,8 @@ const McqGenIntro = () => {
   const btnStyle = {
     textTransform: "none",
     font: {
-      xs: "normal 500 8px/normal 'Inter'",
-      sm: "normal 500 10px/normal 'Inter'",
+      xs: "normal 500 12px/normal 'Inter'",
+      sm: "normal 500 12px/normal 'Inter'",
       md: "normal 500 12px/normal 'Inter'",
       lg: "normal 500 14px/normal 'Inter'",
     },
@@ -16,8 +16,8 @@ const McqGenIntro = () => {
     border: "1px solid #054BB4",
     // height: "49px",
     // width: "178px",
-    height: { xs: "25px", sm: "35px", md: "40px", lg: "49px" },
-    width: { xs: "100px", sm: "130px", md: "150px", lg: "178px" },
+    height: { xs: "40px", sm: "35px", md: "40px", lg: "49px" },
+    width: { xs: "150px", sm: "130px", md: "150px", lg: "178px" },
     color: "white",
   };
   return (
@@ -40,7 +40,7 @@ const McqGenIntro = () => {
                 lg: "normal 800 47px/normal 'InterBold'",
               },
               color: "#000",
-              margin: "48px 0px 0px 0px",
+              margin: { xs: "15px 0 0 0", sm: "48px 0px 0px 0px" },
             }}
           >
             Welcome to the EduTech AI MCQ Generator!
@@ -80,7 +80,9 @@ const McqGenIntro = () => {
             Get Started with Our Interactive Multiple Choice Question Tool
           </Typography>
         </Box>
-        <Box sx={{ margin: "50px 0px 50px 0px" }}>
+        <Box
+          sx={{ margin: { xs: "20px 0px 20px 0px", sm: "50px 0px 50px 0px" } }}
+        >
           <Button
             sx={{ ...btnStyle, backgroundColor: "#054BB4" }}
             variant="contained"

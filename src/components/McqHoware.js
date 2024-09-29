@@ -50,7 +50,12 @@ const McqHoware = () => {
                 lg: "normal 400 23px/normal 'Inter'",
               },
               color: "#000",
-              margin: "0px 0px 49px 0px",
+              margin: {
+                xs: "0px 0px 15px 0px",
+                sm: "0px 0px 15px 0px",
+                md: "0px 0px 25px 0px",
+                lg: "0px 0px 45px 0px",
+              },
             }}
           >
             Using advanced AI algorithms, it generates questions that align with

@@ -135,7 +135,7 @@ const McqForm = () => {
           }}
           container
         >
-          <Grid size={{ xs: 6.5, sm: 12 }}>
+          <Grid size={{ xs: 11, sm: 12 }}>
             <Box
               sx={{
                 display: "grid",

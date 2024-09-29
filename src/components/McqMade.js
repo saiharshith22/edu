@@ -14,7 +14,7 @@ const McqMade = () => {
     <Grid
       container
       sx={{
-        my: "50px",
+        my: { xs: "15px", sm: "50px" },
       }}
     >
       <Grid
@@ -110,7 +110,7 @@ const McqMade = () => {
           alignItems: "center",
         }}
       >
-        <Grid size={{ xs: 6.5, sm: 12 }}>
+        <Grid size={{ xs: 9, sm: 12 }}>
           <Box sx={{ border: "1px solid #E2E0E0" }}>
             <Typography
               sx={{
