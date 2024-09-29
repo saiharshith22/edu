@@ -54,7 +54,7 @@ const McqGenIntro2 = () => {
         </Typography>
       </Box>
       <Box>
-        <video width="100%" height="auto" controls>
+        <video width="387px" height="auto" controls>
           <source src={McqContentVdos} type="video/mp4" />
         </video>
       </Box>
