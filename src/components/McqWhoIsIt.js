@@ -70,7 +70,7 @@ const McqWhoIsIt = () => {
           justifyContent: "center",
         }}
         container
-        spacing={3}
+        spacing={8}
       >
         {McqUniList1.map((item) => {
           return (

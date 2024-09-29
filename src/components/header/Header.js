@@ -80,10 +80,6 @@ const Header = () => {
     }
   };
 
-  // const handleClick = (routeTo) => {
-  //   console.log("----->", routeTo);
-  // };
-
   const headerItems = [
     "Home",
     "Product",
