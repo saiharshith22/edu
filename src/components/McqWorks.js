@@ -5,11 +5,13 @@ import {
   ListItem,
   ListItemText,
   Typography,
+  useMediaQuery,
 } from "@mui/material";
 import McqGenVideo from "../assets/Images/McqGenVideo.mp4";
 import React from "react";
 
 const McqWorks = () => {
+  const videoBreakPoint = useMediaQuery("(max-width:600px)");
   return (
     <Box>
       <div
@@ -25,7 +27,7 @@ const McqWorks = () => {
         <Typography
           sx={{
             font: {
-              xs: "normal 500 18px/normal 'Inter'",
+              xs: "normal 500 16px/normal 'Inter'",
               sm: "normal 500 20px/normal 'Inter'",
               md: "normal 500 28px/normal 'Inter'",
               lg: "normal 500 33px/normal 'Inter'",
@@ -35,7 +37,7 @@ const McqWorks = () => {
             margin: "0px",
           }}
         >
-          HOW ARE MCQs made?
+          HOW IT WORKS
         </Typography>
         <hr
           style={{
@@ -47,7 +49,14 @@ const McqWorks = () => {
         />
       </div>
       <Grid container>
-        <Grid size={{ xs: 12, sm: 8, md: 8, lg: 8 }}>
+        <Grid
+          size={{ xs: 12, sm: 8, md: 8, lg: 8 }}
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
           <List
             sx={{
               paddingLeft: 2,
@@ -65,10 +74,10 @@ const McqWorks = () => {
                   <Typography
                     sx={{
                       font: {
-                        xs: "normal 400 10px/normal 'Inter'",
+                        xs: "normal 400 14px/normal 'Inter'",
                         sm: "normal 400 16px/normal 'Inter'",
                         md: "normal 400 18px/normal 'Inter'",
-                        lg: "normal 400 23px/normal 'Inter'",
+                        lg: "normal 400 22px/normal 'Inter'",
                       },
                     }}
                   >
@@ -89,10 +98,10 @@ const McqWorks = () => {
                   <Typography
                     sx={{
                       font: {
-                        xs: "normal 400 10px/normal 'Inter'",
+                        xs: "normal 400 14px/normal 'Inter'",
                         sm: "normal 400 16px/normal 'Inter'",
                         md: "normal 400 18px/normal 'Inter'",
-                        lg: "normal 400 23px/normal 'Inter'",
+                        lg: "normal 400 22px/normal 'Inter'",
                       },
                     }}
                   >
@@ -113,10 +122,10 @@ const McqWorks = () => {
                   <Typography
                     sx={{
                       font: {
-                        xs: "normal 400 10px/normal 'Inter'",
+                        xs: "normal 400 14px/normal 'Inter'",
                         sm: "normal 400 16px/normal 'Inter'",
                         md: "normal 400 18px/normal 'Inter'",
-                        lg: "normal 400 23px/normal 'Inter'",
+                        lg: "normal 400 22px/normal 'Inter'",
                       },
                     }}
                   >
@@ -137,10 +146,10 @@ const McqWorks = () => {
                   <Typography
                     sx={{
                       font: {
-                        xs: "normal 400 10px/normal 'Inter'",
+                        xs: "normal 400 14px/normal 'Inter'",
                         sm: "normal 400 16px/normal 'Inter'",
                         md: "normal 400 18px/normal 'Inter'",
-                        lg: "normal 400 23px/normal 'Inter'",
+                        lg: "normal 400 22px/normal 'Inter'",
                       },
                     }}
                   >
@@ -162,10 +171,10 @@ const McqWorks = () => {
                   <Typography
                     sx={{
                       font: {
-                        xs: "normal 400 10px/normal 'Inter'",
+                        xs: "normal 400 14px/normal 'Inter'",
                         sm: "normal 400 16px/normal 'Inter'",
                         md: "normal 400 18px/normal 'Inter'",
-                        lg: "normal 400 23px/normal 'Inter'",
+                        lg: "normal 400 22px/normal 'Inter'",
                       },
                     }}
                   >
@@ -177,8 +186,22 @@ const McqWorks = () => {
             </ListItem>
           </List>
         </Grid>
-        <Grid size={{ xs: 12, sm: 4, md: 4, lg: 4 }}>
-          <video width="100%" height="auto" controls>
+        <Grid
+          size={{ xs: 12, sm: 4, md: 4, lg: 4 }}
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <video
+            width={`${videoBreakPoint ? "50%" : "100%"}`}
+            height="auto"
+            autoPlay
+            loop
+            muted
+            controls={false}
+          >
             <source src={McqGenVideo} type="video/mp4" />
           </video>
         </Grid>

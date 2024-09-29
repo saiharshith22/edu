@@ -1,13 +1,7 @@
+import { Grid2 as Grid, Typography } from "@mui/material";
 import React from "react";
 import { McqUniList1, McqUniList2 } from "../assets/McqUniList";
-import {
-  Box,
-  Card,
-  CardContent,
-  Typography,
-  Grid2 as Grid,
-  Stack,
-} from "@mui/material";
+import CustomCard from "../components/customComponents/CustomCard";
 
 const McqWhoIsIt = () => {
   return (
@@ -80,81 +74,15 @@ const McqWhoIsIt = () => {
       >
         {McqUniList1.map((item) => {
           return (
-            <Grid display="flex" size={{ md: 4 }} sx={{ padding: "50px" }}>
-              <Card
-                sx={{
-                  //maxWidth: 345,
-                  maxWidth: "270px",
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  padding: "20px",
-                }}
-              >
-                {/* <CardMedia>{item.image} </CardMedia> */}
-                <img
-                  style={{
-                    maxWidth: "180px",
-                    maxHeight: "180px",
-                    padding: "0px 0px 20px 0px",
-                  }}
-                  src={item.image}
-                  alt=""
-                />
-                <Typography gutterBottom variant="h5" component="div">
-                  {item.title}
-                </Typography>
-                <Typography
-                  sx={{ p: "15px", textAlign: "center" }}
-                  variant="body2"
-                  color="text.secondary"
-                >
-                  {item.text}
-                </Typography>
-              </Card>
+            <Grid display="flex" size={{ md: 4 }} key={item.title}>
+              <CustomCard item={item} showLearnMore={false} />
             </Grid>
           );
         })}
         {McqUniList2.map((item) => {
           return (
-            <Grid display="flex" size={{ md: 4 }} padding={"0px 50px 0px 50px"}>
-              <Card
-                sx={{
-                  maxWidth: "270px",
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  padding: "20px",
-                }}
-              >
-                {/* <CardMedia>{item.image} </CardMedia> */}
-                <img
-                  style={{
-                    maxWidth: "180px",
-                    maxHeight: "180px",
-                    padding: "0px 0px 20px 0px",
-                  }}
-                  src={item.image}
-                  alt=""
-                />
-                <CardContent>
-                  <Typography
-                    sx={{ textAlign: "center" }}
-                    gutterBottom
-                    variant="h5"
-                    component="div"
-                  >
-                    {item.title}
-                  </Typography>
-                  <Typography
-                    sx={{ p: "15px", textAlign: "center" }}
-                    variant="body2"
-                    color="text.secondary"
-                  >
-                    {item.text}
-                  </Typography>
-                </CardContent>
-              </Card>
+            <Grid display="flex" size={{ md: 4 }} key={item.title}>
+              <CustomCard item={item} showLearnMore={false} />
             </Grid>
           );
         })}

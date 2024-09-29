@@ -1,5 +1,5 @@
+import { Box, Grid2 as Grid, Typography } from "@mui/material";
 import React from "react";
-import { Box, Button, Typography, Grid2 as Grid } from "@mui/material";
 import McqContentVdos from "../assets/Images/MyContentVdo.mp4";
 
 const McqGenIntro2 = () => {
@@ -53,8 +53,8 @@ const McqGenIntro2 = () => {
           effortlessly!
         </Typography>
       </Box>
-      <Box>
-        <video width="387px" height="auto" controls>
+      <Box sx={{ width: "100%" }}>
+        <video width="100%" height="auto" autoPlay loop muted controls={false}>
           <source src={McqContentVdos} type="video/mp4" />
         </video>
       </Box>

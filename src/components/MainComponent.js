@@ -92,7 +92,7 @@ const MainComponent = () => {
                   lg: "normal 800 47px/normal 'InterBold'",
                 },
                 color: "#000",
-                margin: "20px 0px 6px 0px",
+                margin: { xs: "0px 0px 6px 0px", sm: "20px 0px 6px 0px" },
               }}
             >
               Elevate Your Study Game with AI
@@ -377,10 +377,10 @@ const MainComponent = () => {
                 letterSpacing: "0.04px",
                 borderRadius: "8.384px",
                 background: "#054BB4",
-                p: "20px 15px",
+                p: { xs: "5px", sm: "20px 15px" },
                 position: "absolute",
                 bottom: 0,
-                transform: "translate(-50px)",
+                transform: { xs: "translate(-30px)", sm: "translate(-50px)" },
               }}
             >
               <Typography>100 +</Typography>
@@ -389,7 +389,7 @@ const MainComponent = () => {
             <Box
               component="img"
               sx={{
-                width: { sm: "300px", lg: "25vw" },
+                width: { xs: "250px", sm: "300px", lg: "25vw" },
                 height: { sm: "190px", lg: "15vw" },
                 maxWidth: "300px",
                 maxHeight: "190px",
@@ -436,6 +436,7 @@ const MainComponent = () => {
           {images.map((image) => {
             return (
               <Grid
+                key={image}
                 sx={{
                   display: "flex",
                   justifyContent: "center",

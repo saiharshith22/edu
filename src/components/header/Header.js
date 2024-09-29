@@ -94,7 +94,7 @@ const Header = () => {
   return (
     <AppBar
       position="static"
-      sx={{ bgcolor: "white", margin: "30px 0" }}
+      sx={{ bgcolor: "white", margin: { xs: "15px 0", sm: "30px 0" } }}
       elevation={0}
     >
       <Toolbar disableGutters>
@@ -107,6 +107,7 @@ const Header = () => {
             aria-haspopup="true"
             onClick={handleOpenNavMenu}
             color="#595959"
+            sx={{ padding: 0 }}
           >
             <MenuIcon />
           </IconButton>

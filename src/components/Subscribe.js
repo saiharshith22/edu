@@ -10,42 +10,7 @@ import SubscribeImg from "../assets/Images/subscribe.png";
 
 const Subscribe = () => {
   return (
-    <Grid container spacing={3}>
-      <Grid
-        size={{ xs: 12 }}
-        sx={{
-          display: "flex",
-          flexDirection: "row",
-          gap: "24px",
-          alignItems: "center",
-          marginTop: "50px",
-          marginBottom: "24px",
-        }}
-      >
-        <Typography
-          sx={{
-            font: {
-              xs: "normal 500 18px/normal 'Inter'",
-              sm: "normal 500 20px/normal 'Inter'",
-              md: "normal 500 28px/normal 'Inter'",
-              lg: "normal 500 33px/normal 'Inter'",
-            },
-            color: "#5A5C5F",
-            letterSpacing: "0.083px",
-            margin: "0px",
-          }}
-        >
-          LATEST NEWS
-        </Typography>
-        <hr
-          style={{
-            background: "#000",
-            width: "11%",
-            height: "1px",
-            margin: "0px",
-          }}
-        />
-      </Grid>
+    <Grid container spacing={3} sx={{ marginTop: "50px" }}>
       <Grid size={{ sm: 6 }} sx={{ display: "flex", alignItems: "flex-end" }}>
         <Box
           component="img"
