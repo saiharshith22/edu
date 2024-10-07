@@ -33,13 +33,14 @@ const McqHoware2ndBox = () => {
           <Typography
             sx={{
               font: {
-                xs: "normal 400 8px/normal 'Inter'",
-                sm: "normal 400 10px/normal 'Inter'",
+                xs: "normal 400 10px/normal 'Inter'",
+                sm: "normal 400 13px/normal 'Inter'",
                 md: "normal 400 16px/normal 'Inter'",
                 lg: "normal 400 18px/normal 'Inter'",
               },
               color: "#000",
-              padding: "10px",
+
+              paddingBottom: "10px",
             }}
           >
             Banks, financial institutions and insurance providers have used
