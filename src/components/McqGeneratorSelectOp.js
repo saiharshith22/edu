@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   InputLabel,
   MenuItem,
@@ -33,9 +33,9 @@ export default function McqGeneratorSelectOp() {
     border: "0.5px solid #000",
     background: "#FFF",
   };
-  const [mcqType, setMcqType] = React.useState("");
-  const [mcqCount, setMcqCount] = React.useState("");
-  const [mcqLevel, setMcqLevel] = React.useState("");
+  const [mcqType, setMcqType] = React.useState(1);
+  const [mcqCount, setMcqCount] = React.useState(1);
+  const [mcqLevel, setMcqLevel] = React.useState(1);
 
   const [open, setOpen] = React.useState(false);
 

@@ -7,11 +7,6 @@ import McqMade from "../components/McqMade";
 import McqForm from "../components/McqForm";
 import McqHoware from "../components/McqHoware";
 import McqHoware2ndBox from "../components/McqHoware2ndBox";
-import McqGenerator1 from "../components/McqGenerator1";
-import McqGenerator2ShowCase from "../components/McqGenerator2ShowCase";
-import McqGeneratorSelectOp from "../components/McqGeneratorSelectOp";
-import McqGeneratorButton from "../components/McqGeneratorButton";
-
 const McqGenerator = () => {
   return (
     <>
@@ -19,15 +14,11 @@ const McqGenerator = () => {
       <McqGenIntro2 />
       <McqWhoIsIt />
       <McqWorks />
-      {/* another components */}
       <McqHoware />
       <McqMade />
       <McqHoware2ndBox />
       <McqForm />
-       <McqGenerator1/>
-       <McqGenerator2ShowCase/>
-       <McqGeneratorSelectOp/>
-       <McqGeneratorButton/>
+       
     </>
   );
 };

@@ -2,7 +2,6 @@ import React from "react";
 import McQFormImg from "../assets/Images/McqFormImg.svg";
 import {
   Box,
-  Button,
   Grid2 as Grid,
   List,
   ListItem,
@@ -22,8 +21,7 @@ const McqForm = () => {
     borderRadius: "2px",
     backgroundColor: "#054BB4",
     textTransform: "none",
-    // padding: "5px",
-    // textAlign: "center",
+    padding: "10px 12px",
   };
   return (
     <div>
@@ -192,18 +190,28 @@ const McqForm = () => {
                 sx={{
                   display: "grid",
                   gridTemplateColumns: {
-                    xs: "repeat(4, 1fr)",
+                    xs: "repeat(1, 1fr)",
                     sm: "repeat(2, 1fr)",
                     md: "repeat(2, 1fr)",
                     lg: "repeat(2, 1fr)",
                   },
                   gap: 1,
+                  justifyContent: { xs: "center" },
                 }}
               >
-                <Button sx={formStyle}>Artifial Intelligence</Button>
-                <Button sx={formStyle}>Blockchain</Button>
-                <Button sx={formStyle}>Cloud computing</Button>
-                <Button sx={formStyle}>Robotic Process Automation</Button>
+                <Typography sx={formStyle}>Artifial Intelligence</Typography>
+                <Typography sx={formStyle}>Blockchain</Typography>
+                <Typography sx={formStyle}>Cloud computing</Typography>
+                <Typography
+                  sx={{
+                    ...formStyle,
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
+                    whiteSpace: "nowrap",
+                  }}
+                >
+                  Robotic Process Automation
+                </Typography>
               </Box>
             </Box>
           </Grid>
