@@ -1,12 +1,12 @@
 import { Box } from "@mui/material";
 import "./App.css";
 
-import Header from "./components/header/Header";
-import Home from "./pages/Home";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Footer from "./components/footer/Footer";
+import Header from "./components/header/Header";
+import AboutMcqGenerator from "./pages/AboutMcqGenerator";
+import Home from "./pages/Home";
 import McqGenerator from "./pages/McqGenerator";
-import McqQuizGen from "./pages/McqQuizGen";
 
 function App() {
   return (
@@ -24,8 +24,8 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/mcq-about" element={<McqGenerator />} />
-          <Route path="/mcq-generator" element={<McqQuizGen />} />
+          <Route path="/mcq-about" element={<AboutMcqGenerator />} />
+          <Route path="/mcq-generator" element={<McqGenerator />} />
         </Routes>
         <Footer />
       </Router>

@@ -1,12 +1,5 @@
+import { Box, Button, Card, CardContent, Typography } from "@mui/material";
 import React from "react";
-import {
-  Box,
-  Button,
-  Card,
-  CardContent,
-  Grid2 as Grid,
-  Typography,
-} from "@mui/material";
 
 const CustomCard = (props) => {
   const { item, showLearnMore } = props;

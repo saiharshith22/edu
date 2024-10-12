@@ -1,7 +1,17 @@
 import { Button } from "@mui/material";
-import React from "react";
+import React, { useContext } from "react";
+import { McqGeneratorContext } from ".";
+import { useDispatch } from "react-redux";
+import {
+  generateMcqsFromFile,
+  generateMcqsFromText,
+} from "../../features/generateMcqs/generateMcqsServices";
 
 const McqGeneratorButton = () => {
+  const context = useContext(McqGeneratorContext);
+  const dispatch = useDispatch();
+  const { text, uploadedFile, mcqCount } = context;
+
   const btnStyle = {
     textTransform: "none",
     font: "normal 500 14px/normal 'Inter'",
@@ -12,6 +22,16 @@ const McqGeneratorButton = () => {
     height: { xs: "39px", sm: "49px" },
     width: { xs: "285px", sm: "505px", md: "748px", lg: "748px" },
   };
+
+  const handleGenerateMcq = () => {
+    if (text) {
+      dispatch(generateMcqsFromText({ text, number: mcqCount }));
+    }
+    if (uploadedFile) {
+      dispatch(generateMcqsFromFile({ uploadedFile, number: mcqCount }));
+    }
+  };
+
   return (
     <div
       style={{
@@ -20,7 +40,11 @@ const McqGeneratorButton = () => {
         alignItems: "center",
       }}
     >
-      <Button sx={{ ...btnStyle, background: "#054BB4" }} variant="contained">
+      <Button
+        sx={{ ...btnStyle, background: "#054BB4" }}
+        variant="contained"
+        onClick={handleGenerateMcq}
+      >
         Generate MCQ
       </Button>
     </div>

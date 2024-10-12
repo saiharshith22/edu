@@ -6,9 +6,14 @@ import {
   Select,
   Typography,
 } from "@mui/material";
-import React from "react";
+import React, { useContext } from "react";
+import { McqGeneratorContext } from ".";
 
 export default function McqGeneratorSelectOp() {
+  const context = useContext(McqGeneratorContext);
+  const { mcqType, setMcqType, mcqCount, setMcqCount, mcqLevel, setMcqLevel } =
+    context;
+
   const GridStyle = {
     display: "flex",
     flexDirection: "column",
@@ -33,9 +38,6 @@ export default function McqGeneratorSelectOp() {
     border: "0.5px solid #000",
     background: "#FFF",
   };
-  const [mcqType, setMcqType] = React.useState(1);
-  const [mcqCount, setMcqCount] = React.useState(1);
-  const [mcqLevel, setMcqLevel] = React.useState(1);
 
   const [open, setOpen] = React.useState(false);
 
@@ -48,6 +50,8 @@ export default function McqGeneratorSelectOp() {
       setMcqLevel(event.target.value);
     }
   };
+
+  console.table({ mcqType, mcqCount, mcqLevel });
 
   const handleClose = (type) => () => {
     setOpen((prev) => ({ ...prev, [type]: true }));
@@ -86,13 +90,14 @@ export default function McqGeneratorSelectOp() {
                 alignItems: "center",
               }}
             >
-              <MenuItem value=""></MenuItem>
-              <MenuItem value={1}>MCQ (Multiple Choise Question)</MenuItem>
-              <MenuItem value={2}>True & False (For paid Subscribers)</MenuItem>
-              <MenuItem value={3}>
+              <MenuItem value={"mcq"}>MCQ (Multiple Choise Question)</MenuItem>
+              <MenuItem value={"true/false"}>
+                True & False (For paid Subscribers)
+              </MenuItem>
+              <MenuItem value={"fillInTheBlanks"}>
                 Fill in the blanks (For paid Subscribers)
               </MenuItem>
-              <MenuItem value={4}>
+              <MenuItem value={"highOrderQA"}>
                 High order QA (For paid Subscribers)
               </MenuItem>
             </Select>
@@ -116,11 +121,10 @@ export default function McqGeneratorSelectOp() {
                 alignItems: "center",
               }}
             >
-              <MenuItem value=""></MenuItem>
-              <MenuItem value={1}>10</MenuItem>
-              <MenuItem value={2}>100 (For paid Subscribers)</MenuItem>
-              <MenuItem value={3}>150 (For paid Subscribers)</MenuItem>
-              <MenuItem value={4}>200+ (For paid Subscribers)</MenuItem>
+              <MenuItem value={10}>10</MenuItem>
+              <MenuItem value={100}>100 (For paid Subscribers)</MenuItem>
+              <MenuItem value={150}>150 (For paid Subscribers)</MenuItem>
+              <MenuItem value={200}>200+ (For paid Subscribers)</MenuItem>
             </Select>
           </FormControl>
         </Grid>
@@ -159,10 +163,9 @@ export default function McqGeneratorSelectOp() {
                 alignItems: "center",
               }}
             >
-              <MenuItem value=""> </MenuItem>
-              <MenuItem value={1}>Easy</MenuItem>
-              <MenuItem value={2}>Medium</MenuItem>
-              <MenuItem value={3}>Hard</MenuItem>
+              <MenuItem value={"easy"}>Easy</MenuItem>
+              <MenuItem value={"medium"}>Medium</MenuItem>
+              <MenuItem value={"hard"}>Hard</MenuItem>
             </Select>
           </FormControl>
         </Grid>

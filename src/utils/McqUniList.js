@@ -1,7 +1,6 @@
-import React from "react";
+import Parents from "../assets/Images/parents.png";
 import Students from "../assets/Images/Students.png";
 import Teachers from "../assets/Images/Teacher.png";
-import Parents from "../assets/Images/parents.png";
 import Tutors from "../assets/Images/Tutors.png";
 import EduInst from "../assets/Images/university.png";
 
