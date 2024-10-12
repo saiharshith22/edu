@@ -7,7 +7,7 @@ import {
   Typography,
   useMediaQuery,
 } from "@mui/material";
-import McqGenVideo from "../assets/Images/McqGenVideo.mp4";
+import McqGenVideo from "../../assets/Images/McqGenVideo.mp4";
 import React from "react";
 
 const McqWorks = () => {

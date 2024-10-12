@@ -1,6 +1,6 @@
 import { Box, Grid2 as Grid, Typography } from "@mui/material";
 import React from "react";
-import LatestNewsImg from "../assets/Images/latest-news.png";
+import LatestNewsImg from "../../assets/Images/latest-news.png";
 
 const LatestNews = () => {
   return (

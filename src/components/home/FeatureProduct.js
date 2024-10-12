@@ -1,14 +1,7 @@
-import {
-  Box,
-  Button,
-  Card,
-  CardContent,
-  Grid2 as Grid,
-  Typography,
-} from "@mui/material";
+import { Grid2 as Grid, Typography } from "@mui/material";
 import React from "react";
-import Product from "../assets/Product";
-import CustomCard from "./customComponents/CustomCard";
+import Product from "../../assets/Product";
+import CustomCard from "../customComponents/CustomCard";
 
 const FeatureProduct = () => {
   return (

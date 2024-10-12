@@ -1,8 +1,8 @@
 import { Box, Grid2 as Grid, Typography } from "@mui/material";
 import React from "react";
-import ClientIcon from "../assets/Images/clients-icon.svg";
-import CountriesIcon from "../assets/Images/countries-icon.svg";
-import ExperienceIcon from "../assets/Images/experience-icon.svg";
+import ClientIcon from "../../assets/Images/clients-icon.svg";
+import CountriesIcon from "../../assets/Images/countries-icon.svg";
+import ExperienceIcon from "../../assets/Images/experience-icon.svg";
 
 const Achievements = () => {
   const achievementsData = [

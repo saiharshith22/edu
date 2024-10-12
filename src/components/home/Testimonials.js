@@ -1,6 +1,6 @@
 import { Box, Grid2 as Grid, Typography } from "@mui/material";
 import React from "react";
-import TestimonialImg from "../assets/Images/testimonial-img.svg";
+import TestimonialImg from "../../assets/Images/testimonial-img.svg";
 
 const Testimonials = () => {
   return (

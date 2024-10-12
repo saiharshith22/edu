@@ -4,9 +4,9 @@ import "./App.css";
 import Header from "./components/header/Header";
 import Home from "./pages/Home";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Footer from "./components/Footer";
-import McqWhoIsIt from "./components/McqWhoIsIt";
+import Footer from "./components/footer/Footer";
 import McqGenerator from "./pages/McqGenerator";
+import McqQuizGen from "./pages/McqQuizGen";
 
 function App() {
   return (
@@ -25,6 +25,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/mcq-about" element={<McqGenerator />} />
+          <Route path="/mcq-generator" element={<McqQuizGen />} />
         </Routes>
         <Footer />
       </Router>

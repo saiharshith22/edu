@@ -8,10 +8,10 @@ import {
   Divider,
   Stack,
 } from "@mui/material";
-import FacebookIcon from "../assets/Images/facebook.svg";
-import TwitterIcon from "../assets/Images/twitter.svg";
-import LinkedInIcon from "../assets/Images/linkedin.svg";
-import InstagramIcon from "../assets/Images/instagram.svg";
+import FacebookIcon from "../../assets/Images/facebook.svg";
+import TwitterIcon from "../../assets/Images/twitter.svg";
+import LinkedInIcon from "../../assets/Images/linkedin.svg";
+import InstagramIcon from "../../assets/Images/instagram.svg";
 import { Email, Phone } from "@mui/icons-material";
 
 let footerItems = [

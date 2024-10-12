@@ -1,7 +1,9 @@
 import { Box, Button, Typography, Grid2 as Grid } from "@mui/material";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const McqGenIntro = () => {
+  const navigate = useNavigate();
   const btnStyle = {
     textTransform: "none",
     font: {
@@ -14,12 +16,15 @@ const McqGenIntro = () => {
     letterSpacing: "0.175px",
     borderRadius: "32px",
     border: "1px solid #054BB4",
-    // height: "49px",
-    // width: "178px",
     height: { xs: "40px", sm: "35px", md: "40px", lg: "49px" },
     width: { xs: "150px", sm: "130px", md: "150px", lg: "178px" },
     color: "white",
   };
+
+  const handleGetStarted = () => {
+    navigate("/mcq-generator");
+  };
+
   return (
     <Grid
       container
@@ -86,6 +91,7 @@ const McqGenIntro = () => {
           <Button
             sx={{ ...btnStyle, backgroundColor: "#054BB4" }}
             variant="contained"
+            onClick={handleGetStarted}
           >
             Get Started for free
           </Button>

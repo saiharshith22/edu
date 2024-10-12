@@ -1,15 +1,14 @@
 import {
   Box,
+  Button,
   Grid2 as Grid,
+  TextField,
   Typography,
   styled,
-  Button,
-  TextField,
 } from "@mui/material";
 
-import React from "react";
-import PrimeUpload from "../assets/Images/prime_upload.svg";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
+import React from "react";
 
 const McqGenerator1 = () => {
   //Upload style

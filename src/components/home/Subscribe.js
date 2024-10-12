@@ -6,7 +6,7 @@ import {
   Typography,
 } from "@mui/material";
 import React from "react";
-import SubscribeImg from "../assets/Images/subscribe.png";
+import SubscribeImg from "../../assets/Images/subscribe.png";
 
 const Subscribe = () => {
   return (

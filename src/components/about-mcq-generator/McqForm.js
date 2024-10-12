@@ -1,5 +1,5 @@
 import React from "react";
-import McQFormImg from "../assets/Images/McqFormImg.svg";
+import McQFormImg from "../../assets/Images/McqFormImg.svg";
 import {
   Box,
   Grid2 as Grid,

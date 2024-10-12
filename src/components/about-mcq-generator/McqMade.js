@@ -7,7 +7,7 @@ import {
   ListItemText,
   Typography,
 } from "@mui/material";
-import Vector from "../assets/Images/Vector.svg";
+import Vector from "../../assets/Images/Vector.svg";
 
 const McqMade = () => {
   return (

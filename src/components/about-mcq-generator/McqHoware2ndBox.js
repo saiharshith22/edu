@@ -7,8 +7,8 @@ import {
   Typography,
 } from "@mui/material";
 import React from "react";
-import ExtractKeywords from "../assets/Images/ExtractKeywords.svg";
-import EtractVector from "../assets/Images/ExtractVector.svg";
+import ExtractKeywords from "../../assets/Images/ExtractKeywords.svg";
+import EtractVector from "../../assets/Images/ExtractVector.svg";
 
 const McqHoware2ndBox = () => {
   return (

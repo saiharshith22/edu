@@ -8,29 +8,29 @@ import {
   useMediaQuery,
 } from "@mui/material";
 import React from "react";
-import AIimgage from "../assets/Images/AIimage.png";
-import Vector from "../assets/Images/Frame.png";
-import StartIcon from "../assets/Images/Group.svg";
-import playBtn from "../assets/Images/Play icon.svg";
-import Start1 from "../assets/Images/Start1.svg";
-import AciLearn from "../assets/Images/aci_learning_logo.png.png";
-import avatar1 from "../assets/Images/avatar1.png";
-import avatar2 from "../assets/Images/avatar2.png";
-import avatar3 from "../assets/Images/avatar3.png";
-import DelhiPub from "../assets/Images/delhi_public_world_school_kotputli__kotputli_logo.png.png";
-import GTSch from "../assets/Images/gtschool_logo.png.png";
-import image1 from "../assets/Images/image1.png";
-import image2 from "../assets/Images/image2.png";
-import image3 from "../assets/Images/image3.png";
-import image4 from "../assets/Images/image4.png";
-import laptopImg from "../assets/Images/laptopImg.png";
-import MindIcon from "../assets/Images/mind_research_institute_logo.png.png";
-import totalStu from "../assets/Images/totalStu.png";
+import AIimgage from "../../assets/Images/AIimage.png";
+import Vector from "../../assets/Images/Frame.png";
+import StartIcon from "../../assets/Images/Group.svg";
+import playBtn from "../../assets/Images/Play icon.svg";
+import Start1 from "../../assets/Images/Start1.svg";
+import AciLearn from "../../assets/Images/aci_learning_logo.png.png";
+import avatar1 from "../../assets/Images/avatar1.png";
+import avatar2 from "../../assets/Images/avatar2.png";
+import avatar3 from "../../assets/Images/avatar3.png";
+import DelhiPub from "../../assets/Images/delhi_public_world_school_kotputli__kotputli_logo.png.png";
+import GTSch from "../../assets/Images/gtschool_logo.png.png";
+import image1 from "../../assets/Images/image1.png";
+import image2 from "../../assets/Images/image2.png";
+import image3 from "../../assets/Images/image3.png";
+import image4 from "../../assets/Images/image4.png";
+import laptopImg from "../../assets/Images/laptopImg.png";
+import MindIcon from "../../assets/Images/mind_research_institute_logo.png.png";
+import totalStu from "../../assets/Images/totalStu.png";
 
-import AllenIcon from "../assets/Images/allen_career_institute_logo.png.png";
-import AnatomyIcon from "../assets/Images/anatomy_guru_logo.png.png";
-import Unanet from "../assets/Images/menu.svg";
-import ThinkTacIcon from "../assets/Images/thinktac_logo.png.png";
+import AllenIcon from "../../assets/Images/allen_career_institute_logo.png.png";
+import AnatomyIcon from "../../assets/Images/anatomy_guru_logo.png.png";
+import Unanet from "../../assets/Images/menu.svg";
+import ThinkTacIcon from "../../assets/Images/thinktac_logo.png.png";
 
 const MainComponent = () => {
   const textBreakPoint = useMediaQuery(
