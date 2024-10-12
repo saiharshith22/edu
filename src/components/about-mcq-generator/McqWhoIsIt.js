@@ -1,6 +1,6 @@
 import { Grid2 as Grid, Typography } from "@mui/material";
 import React from "react";
-import { McqUniList1, McqUniList2 } from "../../assets/McqUniList";
+import { McqUniList1, McqUniList2 } from "../../utils/McqUniList";
 import CustomCard from "../customComponents/CustomCard";
 
 const McqWhoIsIt = () => {

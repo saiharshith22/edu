@@ -101,9 +101,9 @@ const Footer = () => {
           </Box>
         </Grid>
 
-        {footerItems.map((footerItem) => {
+        {footerItems.map((footerItem, i) => {
           return (
-            <Grid size={{ xs: 6, sm: 3, md: 2 }}>
+            <Grid size={{ xs: 6, sm: 3, md: 2 }} key={footerItem.title + i}>
               <Typography
                 variant="h6"
                 component="div"
@@ -119,9 +119,10 @@ const Footer = () => {
               >
                 {footerItem.title}
               </Typography>
-              {footerItem.items.map((item) => {
+              {footerItem.items.map((item, i) => {
                 return (
                   <Link
+                    key={footerItem.title + i}
                     href="#"
                     underline="none"
                     sx={{

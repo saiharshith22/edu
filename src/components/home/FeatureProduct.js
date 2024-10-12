@@ -1,6 +1,6 @@
 import { Grid2 as Grid, Typography } from "@mui/material";
 import React from "react";
-import Product from "../../assets/Product";
+import Product from "../../utils/Product";
 import CustomCard from "../customComponents/CustomCard";
 
 const FeatureProduct = () => {
