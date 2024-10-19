@@ -5,12 +5,15 @@ import { useDispatch } from "react-redux";
 import {
   generateMcqsFromFile,
   generateMcqsFromText,
-} from "../../features/generateMcqs/generateMcqsServices";
+  generateMcqsFromWikiUrl,
+} from "../../features/generateMcqs/generateMcqsSaga";
+import { useNavigate } from "react-router-dom";
 
 const McqGeneratorButton = () => {
   const context = useContext(McqGeneratorContext);
   const dispatch = useDispatch();
-  const { text, uploadedFile, mcqCount } = context;
+  const { text, uploadedFile, mcqCount, wikiUrl } = context;
+  const navigate = useNavigate();
 
   const btnStyle = {
     textTransform: "none",
@@ -23,13 +26,31 @@ const McqGeneratorButton = () => {
     width: { xs: "285px", sm: "505px", md: "748px", lg: "748px" },
   };
 
-  const handleGenerateMcq = () => {
-    if (text) {
-      dispatch(generateMcqsFromText({ text, number: mcqCount }));
-    }
-    if (uploadedFile) {
-      dispatch(generateMcqsFromFile({ uploadedFile, number: mcqCount }));
-    }
+  const handleGenerateMcq = async () => {
+    let result = null;
+    try {
+      if (text) {
+        result = await dispatch(
+          generateMcqsFromText({ text, number: mcqCount })
+        );
+      }
+      if (uploadedFile) {
+        result = await dispatch(
+          generateMcqsFromFile({ uploadedFile, number: mcqCount })
+        );
+      }
+      if (wikiUrl) {
+        result = await dispatch(
+          generateMcqsFromWikiUrl({ text: wikiUrl, number: mcqCount })
+        );
+      }
+      console.log("--->", result);
+      if (result.meta.requestStatus === "fulfilled") {
+        navigate("/take-quiz");
+      } else {
+        console.error("Failed to generate MCQs");
+      }
+    } catch (error) {}
   };
 
   return (

@@ -25,21 +25,33 @@ export const generateMcqsFromText = createAsyncThunk(
 // Async thunk for generating MCQs from file
 export const generateMcqsFromFile = createAsyncThunk(
   "generateMcqs/generateFromFile",
-  async (file, { rejectWithValue }) => {
+  async ({ uploadedFile, number }, { rejectWithValue }) => {
     try {
       // Create form data
       const formData = new FormData();
-      formData.append("file", file);
-
+      formData.append("file", uploadedFile);
+      formData.append("number", number);
       const response = await axios.post(
         `${process.env.REACT_APP_DOMAIN_URL}/upload`,
-        formData,
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
+        formData
       );
+      return response.data;
+    } catch (error) {
+      // Handle errors and return a rejected value
+      return rejectWithValue(error.response.data);
+    }
+  }
+);
+
+export const generateMcqsFromWikiUrl = createAsyncThunk(
+  "generateMcqs/generateFromWikiUrl",
+  async ({ text, number }, { rejectWithValue }) => {
+    try {
+      const response = await axios.post(
+        `${process.env.REACT_APP_DOMAIN_URL}/wiki`,
+        { text, number }
+      );
+      console.log("response", response.data);
       return response.data;
     } catch (error) {
       // Handle errors and return a rejected value

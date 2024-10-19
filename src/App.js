@@ -7,6 +7,7 @@ import Header from "./components/header/Header";
 import AboutMcqGenerator from "./pages/AboutMcqGenerator";
 import Home from "./pages/Home";
 import McqGenerator from "./pages/McqGenerator";
+import TakeQuiz from "./components/takeQuiz";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/mcq-about" element={<AboutMcqGenerator />} />
           <Route path="/mcq-generator" element={<McqGenerator />} />
+          <Route path="/take-quiz" element={<TakeQuiz />} />
         </Routes>
         <Footer />
       </Router>

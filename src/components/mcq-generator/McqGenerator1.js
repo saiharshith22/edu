@@ -8,9 +8,12 @@ import {
 } from "@mui/material";
 
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
-import React from "react";
+import React, { useContext } from "react";
+import { McqGeneratorContext } from ".";
 
 const McqGenerator1 = () => {
+  const context = useContext(McqGeneratorContext);
+  const { uploadedFile, setUploadedFile, wikiUrl, setWikiUrl } = context;
   //Upload style
   const VisuallyHiddenInput = styled("input")({
     clip: "rect(0 0 0 0)",
@@ -23,6 +26,15 @@ const McqGenerator1 = () => {
     whiteSpace: "nowrap",
     //width: 1,
   });
+
+  const handleUploadFile = (e) => {
+    // console.log("file uploaded", e.target.files[0]);
+    setUploadedFile(e.target.files[0]);
+  };
+
+  const handleUrl = (e) => {
+    setWikiUrl(e.target.value);
+  };
 
   return (
     <div style={{ padding: "50px 0px 0px 0px" }}>
@@ -162,7 +174,7 @@ const McqGenerator1 = () => {
               Upload a file
               <VisuallyHiddenInput
                 type="file"
-                onChange={(event) => console.log(event.target.files)}
+                onChange={handleUploadFile}
                 multiple
               />
             </Button>
@@ -200,6 +212,7 @@ const McqGenerator1 = () => {
               <TextField
                 variant="outlined"
                 placeholder="Enter the URL"
+                onChange={handleUrl}
                 sx={{
                   "& fieldset": { border: "none" },
                   "& .MuiInputBase-input": {

@@ -8,6 +8,7 @@ export const McqGeneratorContext = createContext(null);
 const Index = () => {
   const [text, setText] = useState("");
   const [uploadedFile, setUploadedFile] = useState(null);
+  const [wikiUrl, setWikiUrl] = useState("");
 
   const [mcqType, setMcqType] = React.useState("mcq");
   const [mcqCount, setMcqCount] = React.useState(10);
@@ -26,6 +27,8 @@ const Index = () => {
         setMcqCount,
         mcqLevel,
         setMcqLevel,
+        wikiUrl,
+        setWikiUrl,
       }}
     >
       <McqGenerator1 />

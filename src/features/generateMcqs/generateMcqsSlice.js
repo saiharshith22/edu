@@ -2,7 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 import {
   generateMcqsFromFile,
   generateMcqsFromText,
-} from "./generateMcqsServices";
+  generateMcqsFromWikiUrl,
+} from "./generateMcqsSaga";
 
 const initialState = {
   mcqs: [],
@@ -25,6 +26,7 @@ const generateMcqsSlice = createSlice({
       state.uploadedFile = null;
     },
   },
+  // TODO: need to refractor duplicate code
   extraReducers: (builder) => {
     // handle generate mcqs from text
     builder
@@ -50,11 +52,26 @@ const generateMcqsSlice = createSlice({
       })
       .addCase(generateMcqsFromFile.fulfilled, (state, action) => {
         state.loading = false;
-        state.mcqs = action.payload.mcqs;
+        state.mcqs = action.payload.text;
       })
       .addCase(generateMcqsFromFile.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload || "Failed to generate MCQs from file.";
+      });
+    // Handle generate Mcqs From wiki url
+    builder
+      .addCase(generateMcqsFromWikiUrl.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(generateMcqsFromWikiUrl.fulfilled, (state, action) => {
+        state.loading = false;
+        state.mcqs = action.payload.text;
+      })
+      .addCase(generateMcqsFromWikiUrl.rejected, (state, action) => {
+        state.loading = false;
+        state.error =
+          action.payload || "Failed to generate MCQs from Wiki url.";
       });
   },
 });
