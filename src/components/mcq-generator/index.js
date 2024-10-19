@@ -10,9 +10,15 @@ const Index = () => {
   const [uploadedFile, setUploadedFile] = useState(null);
   const [wikiUrl, setWikiUrl] = useState("");
 
-  const [mcqType, setMcqType] = React.useState("mcq");
-  const [mcqCount, setMcqCount] = React.useState(10);
-  const [mcqLevel, setMcqLevel] = React.useState("easy");
+  const [mcqType, setMcqType] = useState("mcq");
+  const [mcqCount, setMcqCount] = useState(10);
+  const [mcqLevel, setMcqLevel] = useState("easy");
+
+  const [mcqInputDisabled, setMcqInputDisabled] = useState({
+    text: false,
+    uploadedFile: false,
+    wikiUrl: false,
+  });
 
   return (
     <McqGeneratorContext.Provider
@@ -29,6 +35,8 @@ const Index = () => {
         setMcqLevel,
         wikiUrl,
         setWikiUrl,
+        mcqInputDisabled,
+        setMcqInputDisabled,
       }}
     >
       <McqGenerator1 />

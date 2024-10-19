@@ -150,7 +150,8 @@ const Header = () => {
                 color: "#595959 ",
                 font: {
                   md: 'normal 400 18px / normal "Inter"',
-                  lg: 'normal 400 23px / normal "Inter"',
+                  lg: 'normal 400 18px / normal "Inter"',
+                  xl: 'normal 400 23px / normal "Inter"',
                 },
                 textTransform: "none",
               }}

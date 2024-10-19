@@ -6,14 +6,21 @@ import {
   Typography,
   styled,
 } from "@mui/material";
-
-import CloudUploadIcon from "@mui/icons-material/CloudUpload";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import React, { useContext } from "react";
 import { McqGeneratorContext } from ".";
+import FileUploadIcon from "../../assets/Images/upload.svg";
 
 const McqGenerator1 = () => {
   const context = useContext(McqGeneratorContext);
-  const { uploadedFile, setUploadedFile, wikiUrl, setWikiUrl } = context;
+  const {
+    uploadedFile,
+    setUploadedFile,
+    setMcqInputDisabled,
+    setWikiUrl,
+    wikiUrl,
+    mcqInputDisabled,
+  } = context;
   //Upload style
   const VisuallyHiddenInput = styled("input")({
     clip: "rect(0 0 0 0)",
@@ -30,10 +37,20 @@ const McqGenerator1 = () => {
   const handleUploadFile = (e) => {
     // console.log("file uploaded", e.target.files[0]);
     setUploadedFile(e.target.files[0]);
+    if (e.target.files[0]) {
+      setMcqInputDisabled({ text: true, uploadedFile: false, wikiUrl: true });
+    } else {
+      setMcqInputDisabled({ text: false, uploadedFile: false, wikiUrl: false });
+    }
   };
 
   const handleUrl = (e) => {
     setWikiUrl(e.target.value);
+    if (e.target.value) {
+      setMcqInputDisabled({ text: true, uploadedFile: true, wikiUrl: false });
+    } else {
+      setMcqInputDisabled({ text: false, uploadedFile: false, wikiUrl: false });
+    }
   };
 
   return (
@@ -159,19 +176,34 @@ const McqGenerator1 = () => {
               role={undefined}
               variant="outlined"
               tabIndex={-1}
-              startIcon={<CloudUploadIcon />}
+              startIcon={
+                uploadedFile ? (
+                  <CheckCircleIcon sx={{ color: "green" }} />
+                ) : (
+                  <img
+                    src={FileUploadIcon}
+                    alt="file upload icon"
+                    style={{
+                      opacity: `${mcqInputDisabled.uploadedFile ? 0.3 : 1}`,
+                    }}
+                  />
+                )
+              }
               sx={{
                 textTransform: "none",
                 font: "normal 400 14px/normal 'Inter'",
-                color: "#000000",
                 letterSpacing: "0.168px",
                 borderRadius: "4px",
-                border: "0.5px solid #5A5C5F",
-                height: { md: "20px", lg: "28px" },
+                border: `${
+                  uploadedFile ? "0.5px solid green" : "0.5px solid #5A5C5F"
+                }`,
+                color: `${uploadedFile ? "green" : "#000000"}`,
+                height: "28px",
                 width: { md: "150px", lg: "252px" },
               }}
+              disabled={mcqInputDisabled.uploadedFile}
             >
-              Upload a file
+              {uploadedFile ? "File Uploaded" : " Upload a file"}
               <VisuallyHiddenInput
                 type="file"
                 onChange={handleUploadFile}
@@ -206,13 +238,15 @@ const McqGenerator1 = () => {
                 borderRadius: "5px",
                 border: "0.5px solid #5A5C5F",
                 width: { md: "150px", lg: "252px" },
-                height: { md: "20px", lg: "28px" },
+                height: "28px",
               }}
             >
               <TextField
                 variant="outlined"
                 placeholder="Enter the URL"
                 onChange={handleUrl}
+                value={wikiUrl}
+                disabled={mcqInputDisabled.wikiUrl}
                 sx={{
                   "& fieldset": { border: "none" },
                   "& .MuiInputBase-input": {

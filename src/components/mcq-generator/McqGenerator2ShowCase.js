@@ -1,13 +1,19 @@
-import { Box, TextField } from "@mui/material";
+import { Box, TextField, useMediaQuery } from "@mui/material";
 import React, { useContext } from "react";
 import { McqGeneratorContext } from ".";
 
 const McqGenerator2ShowCase = () => {
   const context = useContext(McqGeneratorContext);
-  const { text, setText } = context;
+  const { text, setText, mcqInputDisabled, setMcqInputDisabled } = context;
+  const BELOW_SM = useMediaQuery("(max-width:600px)");
 
   const handleTextChange = (e) => {
     setText(e.target.value);
+    if (e.target.value) {
+      setMcqInputDisabled({ text: false, uploadedFile: true, wikiUrl: true });
+    } else {
+      setMcqInputDisabled({ text: false, uploadedFile: false, wikiUrl: false });
+    }
   };
 
   return (
@@ -15,9 +21,10 @@ const McqGenerator2ShowCase = () => {
       component="form"
       sx={{
         display: "flex",
-        height: "267px",
+        // height: "267px",
         justifyContent: "center",
         alignItems: "center",
+        m: { xs: "20px 0", sm: "50px 0px" },
       }}
       noValidate
       autoComplete="off"
@@ -26,23 +33,25 @@ const McqGenerator2ShowCase = () => {
         id="outlined-multiline-static"
         value={text}
         onChange={handleTextChange}
+        disabled={mcqInputDisabled.text}
         multiline
-        rows={10}
+        rows={BELOW_SM ? 5 : 10}
+        placeholder="Enter the text here"
         sx={{
-          m: 1,
           width: { xs: "280px", sm: "500px", md: "746px", lg: "746px" },
           //maxWidth: "746px",
           borderRadius: "5px",
-          border: "1px solid #000",
+          border: `${mcqInputDisabled.text ? "none" : "1px solid #000"}`,
           background: "#FFF",
           "& .MuiInputBase-input": {
             whiteSpace: "pre-line",
-            font: {
-              xs: "normal 400 10px/normal 'Inter'",
-              sm: "normal 400 10px/normal 'Inter'",
-              md: "normal 400 12px/normal 'Inter'",
-              lg: "normal 400 14px/normal 'Inter'",
+            fontSize: {
+              xs: "12px",
+              md: "12px",
+              lg: "14px",
             },
+            fontWeight: 400,
+            fontFamily: "'Inter', sans-serif",
             color: "#000",
             letterSpacing: "0.021px",
           },

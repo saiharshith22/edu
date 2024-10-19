@@ -8,8 +8,11 @@ import AboutMcqGenerator from "./pages/AboutMcqGenerator";
 import Home from "./pages/Home";
 import McqGenerator from "./pages/McqGenerator";
 import TakeQuiz from "./components/takeQuiz";
+import { useSelector } from "react-redux";
+import LoadingOverlay from "./components/Loaders";
 
 function App() {
+  const loading = useSelector((store) => store.generateMcqs.loading);
   return (
     <Box
       sx={{
@@ -31,6 +34,8 @@ function App() {
         </Routes>
         <Footer />
       </Router>
+
+      <LoadingOverlay open={loading} />
     </Box>
   );
 }
