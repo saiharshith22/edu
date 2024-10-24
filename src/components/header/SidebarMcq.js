@@ -15,14 +15,14 @@ import MenuIcon from "@mui/icons-material/Menu";
 import React, { useState } from "react";
 import { SidebarElements, FooterElements } from "./SidebarElements";
 import BellIcon from "../../assets/Images/bell icon.svg";
-import UserIcon from "../../assets/Images/User.svg";
-import PersonIcon from "../../assets/Images/PersonPic.png";
+import FireIcon from "../../assets/Images/Fire icon.svg";
 import { styled } from "@mui/material/styles";
 import McqGenerator from "../../pages/McqGenerator";
+import TakeQuiz from "../takeQuiz";
 
 const drawerWidth = 300;
 
-const SidebarComponent = () => {
+const SidebarMcq = () => {
   const [open, setOpen] = useState(true);
   const Main = styled("main", { shouldForwardProp: (prop) => prop !== "open" })(
     ({ theme }) => ({
@@ -55,14 +55,14 @@ const SidebarComponent = () => {
     setOpen(false);
   };
   const textStyle = {
-    font: "normal 500 20px/normal 'Inter'",
-    color: "#000",
-    lineHeight: "1.5",
+    font: "normal 500 19px/normal 'Inter'",
+    color: "#FFF",
+    lineHeight: "normal",
     textAlign: "center",
   };
 
   const btnStyle = {
-    background: "#042960",
+    background: "#054BB4",
     color: "#FFFFFF",
     borderRadius: "30px",
     textTransform: "none",
@@ -117,38 +117,17 @@ const SidebarComponent = () => {
             </ListItem>
           ))}
         </List>
-        <Divider sx={{ background: "#E2E0E0", height: "1px" }} />
-        <Box sx={{ position: "relative", display: "inline-block", left: "6%" }}>
-          <Box
-            component="img"
-            src={PersonIcon}
-            alt="personImg"
-            sx={{ width: "149px", height: "149px" }}
-          />
-          <Button
-            sx={{
-              ...btnStyle,
-              position: "absolute",
-              bottom: 0,
-              left: "33%",
-              width: "84px",
-              height: "29px",
-            }}
-          >
-            Free Trial
-          </Button>
-        </Box>
+
         <Box
           sx={{
-            background: "#E2E0E0",
+            background: "#80CAFF",
             borderRadius: "24px",
-            width: "214px",
-            padding: "48px 8px 0px 8px",
+            width: "230px",
+            padding: "20px 0px 20px 0px",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            gap: "16px",
-            marginBottom: "20px",
+            gap: "8px",
           }}
         >
           <Box
@@ -156,31 +135,36 @@ const SidebarComponent = () => {
               display: "flex",
               flexDirection: "row",
               justifyContent: "center",
-              alignItems: "baseline",
+              alignItems: "center",
+              gap: "6px",
             }}
           >
-            <Typography sx={{ ...textStyle, fontSize: "32px" }}>23</Typography>
-            <Typography
-              sx={{ ...textStyle, fontSize: "20px", color: "#828282" }}
-            >
-              /30 days
-            </Typography>
+            <Typography sx={textStyle}>Uprade pro</Typography>
+            <Box component="img" src={FireIcon} />
           </Box>
           <Box
             sx={{
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
+              gap: "3px",
             }}
           >
-            <Typography sx={textStyle}>Subscribe to</Typography>
-            <Typography sx={textStyle}>unlock all features</Typography>
+            <Typography
+              sx={{ ...textStyle, fontSize: "12px", letterSpacing: "0.018px" }}
+            >
+              Get access to High MCQ counts
+            </Typography>
+            <Typography
+              sx={{ ...textStyle, fontSize: "12px", letterSpacing: "0.018px" }}
+            >
+              and all other features & contents
+            </Typography>
           </Box>
-          <Button sx={{ ...btnStyle, width: "198px", height: "49px" }}>
-            Upgrade Plan
+          <Button sx={{ ...btnStyle, width: "83px", height: "28px" }}>
+            Upgrade
           </Button>
         </Box>
-        <Divider sx={{ background: "#E2E0E0", height: "1px" }} />
         <List>
           {FooterElements.map((item) => (
             <ListItem button key={item.text}>
@@ -222,7 +206,7 @@ const SidebarComponent = () => {
               <Button
                 sx={{
                   ...btnStyle,
-                  background: "#054BB4",
+
                   width: { xs: "80px", sm: "100px", md: "120px", lg: "122px" },
                   height: { xs: "35px", sm: "40px", md: "54px", lg: "60px" },
                 }}
@@ -238,27 +222,15 @@ const SidebarComponent = () => {
                   maxHeight: { xs: "35px", sm: "40px", md: "60px" },
                 }}
               />
-              <Box
-                component="img"
-                src={UserIcon}
-                sx={{
-                  backgroundColor: "#054BB4",
-                  borderRadius: "100px",
-                  padding: { xs: "0px", sm: "0px", md: "6px", lg: "6px" },
-                  maxWidth: { xs: "30px", sm: "35px", md: "50px", lg: "60px" },
-                  maxHeight: { xs: "30px", sm: "40px", md: "50px", lg: "60px" },
-                }}
-              />
             </Box>
           </div>
         </Box>
-
         <Divider sx={{ backgroundColor: "#E2E0E0", height: "1px" }} />
 
-        <McqGenerator />
+        <TakeQuiz />
       </Main>
     </Box>
   );
 };
 
-export default SidebarComponent;
+export default SidebarMcq;
