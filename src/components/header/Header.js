@@ -74,8 +74,9 @@ const Header = () => {
         navigate("/");
         break;
       case "Product":
-      default:
         navigate("/mcq-about");
+        break;
+      default:
         break;
     }
   };

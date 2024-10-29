@@ -1,24 +1,23 @@
+import MenuIcon from "@mui/icons-material/Menu";
 import {
   Box,
-  Stack,
-  Typography,
+  Button,
+  Divider,
   Drawer,
+  IconButton,
   List,
   ListItem,
   ListItemIcon,
   ListItemText,
-  Button,
-  Divider,
-  IconButton,
+  Stack,
+  Typography,
 } from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
+import { styled } from "@mui/material/styles";
 import React, { useState } from "react";
-import { SidebarElements, FooterElements } from "./SidebarElements";
 import BellIcon from "../../assets/Images/bell icon.svg";
 import FireIcon from "../../assets/Images/Fire icon.svg";
-import { styled } from "@mui/material/styles";
-import McqGenerator from "../../pages/McqGenerator";
 import TakeQuiz from "../takeQuiz";
+import { FooterElements, SidebarElements } from "./SidebarElements";
 
 const drawerWidth = 300;
 

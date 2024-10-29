@@ -51,7 +51,7 @@ function ResponsiveDrawer(props) {
           width: { sm: `calc(100% - ${drawerWidth}px)` },
           ml: { sm: `${drawerWidth}px` },
           background: "#ffffff",
-          padding: { xs: "20px", sm: "40px" },
+          padding: { xs: "20px", sm: "30px", md: "40px" },
         }}
         elevation={1}
       >
@@ -116,7 +116,6 @@ function ResponsiveDrawer(props) {
         sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
         aria-label="mailbox folders"
       >
-        {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
         <Drawer
           container={container}
           variant="temporary"

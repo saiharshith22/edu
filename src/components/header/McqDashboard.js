@@ -6,13 +6,11 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import searchIcon from "../../assets/Images/ic_outline-search icon.svg";
-import BellIcon from "../../assets/Images/bell icon.svg";
-import UserIcon from "../../assets/Images/User.svg";
-import FrameIcon from "../../assets/Images/Frame 634.svg";
 import CalendarIcon from "../../assets/Images/299092_calendar_icon 1.svg";
-import CalendarOutline from "../../assets/Images/calendar-line-icon 1.svg";
-import TimeIcon from "../../assets/Images/history-line-icon 1.svg";
+import BellIcon from "../../assets/Images/bell icon.svg";
+import FrameIcon from "../../assets/Images/Frame 634.svg";
+import searchIcon from "../../assets/Images/ic_outline-search icon.svg";
+import UserIcon from "../../assets/Images/User.svg";
 const McqDashboard = () => {
     //not using now
   return (

@@ -38,8 +38,8 @@ const McqGenerator2ShowCase = () => {
         rows={BELOW_SM ? 5 : 10}
         placeholder="Enter the text here"
         sx={{
-          width: { xs: "280px", sm: "500px", md: "746px", lg: "746px" },
-          //maxWidth: "746px",
+          width: { xs: "100%", sm: "550px", md: "650px", lg: "100%" },
+          maxWidth: "746px",
           borderRadius: "5px",
           border: `${mcqInputDisabled.text ? "none" : "1px solid #000"}`,
           background: "#FFF",

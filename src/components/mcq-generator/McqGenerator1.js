@@ -167,7 +167,7 @@ const McqGenerator1 = () => {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            flexDirection: { xs: "column", sm: "row" },
+            flexDirection: { xs: "column", sm: "column", md: "row" },
           }}
         >
           <Grid size={{ xs: "12", sm: "6", md: "5", lg: "5" }}>

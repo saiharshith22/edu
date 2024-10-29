@@ -23,7 +23,7 @@ const McqGeneratorButton = () => {
     borderRadius: "30px",
     border: "1px solid #19467E",
     height: { xs: "39px", sm: "49px" },
-    width: { xs: "285px", sm: "505px", md: "748px", lg: "748px" },
+    width: { xs: "100%", sm: "530px", md: "700px", lg: "770px" },
   };
 
   const handleGenerateMcq = async () => {

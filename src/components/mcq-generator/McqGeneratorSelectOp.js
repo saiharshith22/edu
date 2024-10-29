@@ -33,7 +33,8 @@ export default function McqGeneratorSelectOp() {
   };
   const FormStyle = {
     m: 0,
-    width: { xs: "190px", sm: "250px", md: "359px", lg: "359px" },
+    // width: { xs: "100%", sm: "100%", md: "100%", lg: "359px" },
+    width: { xs: "100%", sm: "100%", md: "600px", lg: "380px" },
     borderRadius: "5px",
     border: "0.5px solid #000",
     background: "#FFF",
@@ -67,12 +68,18 @@ export default function McqGeneratorSelectOp() {
         spacing={2}
         sx={{
           display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          flexDirection: { xs: "column", sm: "row" },
+          justifyContent: {
+            xs: "none",
+            sm: "none",
+            md: "center",
+            lg: "center",
+          },
+          alignItems: { xs: "none", sm: "none", md: "center", lg: "center" },
+          flexDirection: { xs: "column", sm: "column", md: "row", lg: "row" },
+          marginBottom: "32px",
         }}
       >
-        <Grid size={{ xs: "12", sm: "7", md: "6", lg: "6" }} sx={GridStyle}>
+        <Grid sx={GridStyle}>
           <Typography sx={TypoStyle}>Question type</Typography>
           <FormControl sx={FormStyle}>
             <InputLabel id="mcq-select-label"></InputLabel>
@@ -103,7 +110,7 @@ export default function McqGeneratorSelectOp() {
             </Select>
           </FormControl>
         </Grid>
-        <Grid size={{ xs: "12", sm: "5", md: "6", lg: "6" }} sx={GridStyle}>
+        <Grid sx={GridStyle}>
           <Typography sx={TypoStyle}>Question Count</Typography>
           <FormControl sx={FormStyle}>
             <InputLabel id="count-select-label"></InputLabel>
@@ -128,24 +135,7 @@ export default function McqGeneratorSelectOp() {
             </Select>
           </FormControl>
         </Grid>
-      </Grid>
-
-      {/* Difficulty level */}
-      <Grid
-        container
-        spacing={2}
-        sx={{
-          display: "flex",
-          justifyContent: "center",
-          marginTop: "10px",
-          marginBottom: "32px",
-          paddingRight: { xs: "0px", sm: "265px", md: "375px" },
-        }}
-      >
-        <Grid
-          //   size={{ xs: "12", sm: "7", md: "6", lg: "6" }}
-          sx={GridStyle}
-        >
+        <Grid sx={GridStyle}>
           <Typography sx={TypoStyle}>Difficulty level</Typography>
           <FormControl sx={FormStyle}>
             <InputLabel id="level-select-label"></InputLabel>
