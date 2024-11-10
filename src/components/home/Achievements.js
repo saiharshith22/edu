@@ -14,7 +14,7 @@ const Achievements = () => {
     },
     {
       img: CountriesIcon,
-      totalNumber: "15k +",
+      totalNumber: "15+",
       title: "Countries",
       subText: "Our clients are spread over 15 countries around the world",
     },
